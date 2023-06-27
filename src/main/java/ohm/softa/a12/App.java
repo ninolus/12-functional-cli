@@ -3,6 +3,7 @@ package ohm.softa.a12;
 import ohm.softa.a12.cnjdb.JokeGenerator;
 import ohm.softa.a12.model.JokeDto;
 
+import java.util.Objects;
 import java.util.Scanner;
 import java.util.stream.Stream;
 
@@ -34,6 +35,7 @@ public abstract class App {
              * filter it for non null objects
              * use `skip` and `limit` to retrieve the required elements
              * and print the jokes to the STDOUT */
+			jokesSource.filter(Objects::nonNull).skip(skipCount).limit(jokeCount).map(JokeDto::getValue).forEach(System.out::println);
 
             System.out.println("If you want to quit press [Q] otherwise press [C] to continue.");
             var input = inputScanner.next();

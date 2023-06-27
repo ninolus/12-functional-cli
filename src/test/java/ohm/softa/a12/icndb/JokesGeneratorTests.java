@@ -16,7 +16,7 @@ class JokesGeneratorTests {
 	void testRandomStream() {
 		/* timeout to ensure that stream does not loop forever */
 		/* TODO implement a test for the random joke stream */
-		int size = 10;
+		int size = 20;
 		List<JokeDto> jokes = jokeGenerator.randomJokesStream().limit(size).collect(Collectors.toList());
 		assert jokes.size() == size;
 	}
@@ -25,7 +25,7 @@ class JokesGeneratorTests {
 	@Test
 	void testJokesStream() {
 		/* TODO implement a test for the linear jokes generator */
-		int size = 10;
+		int size = 20;
 		List<JokeDto> jokes = jokeGenerator.randomJokesStream().limit(size).collect(Collectors.toList());
 		assert jokes.size() == size;
 	}
