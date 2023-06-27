@@ -29,6 +29,7 @@ public final class AllJokesSupplier implements Supplier<JokeDto> {
 
 	}
 
+	// TODO: Ansatz der Aufgabenstellung war wohl eher, die bereits ausgelieferten Jokes zu cachen (z.B. HashMap) und den Zurückzugeben, wenn kein neuer mehr kommt (?)
 	public JokeDto get() {
 		/* TODO retrieve the next joke
 		 * note that there might be IDs that are not present in the database
