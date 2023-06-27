@@ -19,6 +19,7 @@ public final class AllJokesSupplier {
         icndbApi = new CNJDBService().getInstance();
         /* TODO fetch the total count of jokes the API is aware of
          * to determine when all jokes are iterated and the counters have to be reset */
+
     }
 
     public JokeDto get() {

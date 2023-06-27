@@ -11,16 +11,21 @@ import org.apache.commons.lang3.NotImplementedException;
 
 public final class RandomJokeSupplier {
 
-    /* ICNDB API proxy to retrieve jokes */
-    private final CNJDBApi icndbApi;
+	/* ICNDB API proxy to retrieve jokes */
+	private final CNJDBApi icndbApi;
 
-    public RandomJokeSupplier() {
-        icndbApi = new CNJDBService().getInstance();
-    }
+	public RandomJokeSupplier() {
+		icndbApi = new CNJDBService().getInstance();
+	}
 
-    public JokeDto get() {
-        /* TODO fetch a random joke synchronously
-         * if an exception occurs return null */
-        throw new NotImplementedException("Method `get()` is not implemented");
-    }
+	public JokeDto get() {
+		/* TODO fetch a random joke synchronously
+		 * if an exception occurs return null */
+		try {
+			return icndbApi.getRandomJoke().get();
+		} catch (Exception e) {
+			return null;
+		}
+
+	}
 }
