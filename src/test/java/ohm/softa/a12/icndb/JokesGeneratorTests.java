@@ -8,17 +8,21 @@ import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 class JokesGeneratorTests {
 
 	private JokeGenerator jokeGenerator = new JokeGenerator();
 
+	// TODO: Better Tests?
 	@Test
 	void testRandomStream() {
 		/* timeout to ensure that stream does not loop forever */
 		/* TODO implement a test for the random joke stream */
 		int size = 20;
 		List<JokeDto> jokes = jokeGenerator.randomJokesStream().limit(size).collect(Collectors.toList());
-		assert jokes.size() == size;
+		assertEquals(jokes.size(), size);
+
 	}
 
 
@@ -27,7 +31,7 @@ class JokesGeneratorTests {
 		/* TODO implement a test for the linear jokes generator */
 		int size = 20;
 		List<JokeDto> jokes = jokeGenerator.randomJokesStream().limit(size).collect(Collectors.toList());
-		assert jokes.size() == size;
+		assertEquals(jokes.size(), size);
 	}
 
 }
