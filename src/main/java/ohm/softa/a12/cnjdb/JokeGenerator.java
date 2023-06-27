@@ -20,8 +20,7 @@ public final class JokeGenerator {
 	 */
 	public Stream<JokeDto> randomJokesStream() {
 		/* TODO create new Stream of random jokes */
-		RandomJokeSupplier rjs = new RandomJokeSupplier();
-		return Stream.generate(rjs::get);
+		return Stream.generate(new RandomJokeSupplier());
 	}
 
 	/**
@@ -31,7 +30,6 @@ public final class JokeGenerator {
 	 */
 	public Stream<JokeDto> allJokesStream() {
 		/* TODO create a new Stream of all jokes, ie. retrieve random jokes until collision */
-		AllJokesSupplier ajs = new AllJokesSupplier();
-		return Stream.generate(ajs::get);
+		return Stream.generate(new AllJokesSupplier());
 	}
 }

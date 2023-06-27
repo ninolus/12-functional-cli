@@ -8,6 +8,7 @@ import org.apache.commons.lang3.NotImplementedException;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.function.Supplier;
 
 /**
  * Supplier implementation to retrieve all jokes of the ICNDB in a linear way
@@ -15,7 +16,7 @@ import java.util.List;
  * @author Peter Kurfer
  */
 
-public final class AllJokesSupplier {
+public final class AllJokesSupplier implements Supplier<JokeDto> {
 
 	/* ICNDB API proxy to retrieve jokes */
 	private final CNJDBApi icndbApi;

@@ -5,11 +5,13 @@ import ohm.softa.a12.cnjdb.CNJDBService;
 import ohm.softa.a12.model.JokeDto;
 import org.apache.commons.lang3.NotImplementedException;
 
+import java.util.function.Supplier;
+
 /**
  * @author Peter Kurfer
  */
 
-public final class RandomJokeSupplier {
+public final class RandomJokeSupplier implements Supplier<JokeDto> {
 
 	/* ICNDB API proxy to retrieve jokes */
 	private final CNJDBApi icndbApi;
